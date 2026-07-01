@@ -10,7 +10,7 @@ status, country, COVID).
 ## Run
 
 ```
-cd "C:\Users\thesh\Desktop\finhub data\dashboard"
+cd dashboard
 pip install -r requirements.txt
 streamlit run app.py
 ```
@@ -30,11 +30,12 @@ The dashboard reads `../.env` for `FINNHUB_API_KEY` — no need to copy it.
 
 | File | Purpose |
 |---|---|
-| `app.py` | Streamlit UI, 6 tabs |
+| `app.py` | Streamlit UI, 7 tabs |
 | `finnhub_client.py` | Typed per-endpoint functions, returns Optional, never raises |
 | `cache.py` | SQLite TTL cache at `.cache/finnhub.db` |
+| `ai_client.py` | OpenRouter-backed AI analysis (optional, needs `OPENROUTER_API_KEY`) |
 | `.streamlit/config.toml` | Theme + server settings |
-| `requirements.txt` | `streamlit>=1.30` only |
+| `requirements.txt` | streamlit, requests, pandas, plotly, python-dotenv |
 
 ## Using the client outside Streamlit
 

@@ -551,7 +551,7 @@ def latest_xbrl_summary(financials_df: pd.DataFrame | None) -> pd.DataFrame | No
 
 
 def dashboard_version() -> str:
-    return f"client={os.path.getmtime(__file__):.0f} key={API_KEY[:6]}...{API_KEY[-4:]}"
+    return f"client={os.path.getmtime(__file__):.0f}"
 
 
 # CLI sanity-check (no Streamlit required):

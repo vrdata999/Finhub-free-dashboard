@@ -21,7 +21,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from finnhub_client import (  # noqa: E402
     basic_financials, company_profile, country_list, covid_us, crypto_exchanges,
-    crypto_symbols, dashboard_version, earnings_surprises, fda_calendar,
+    crypto_symbols, earnings_surprises, fda_calendar,
     financials_reported, forex_exchanges, forex_symbols,
     insider_sentiment_from_transactions, insider_transactions,
     ipo_calendar, latest_xbrl_summary, lobbying,
@@ -75,7 +75,6 @@ with st.sidebar:
     refresh = st.button(":arrows_counterclockwise: Refresh this symbol",
                         help="Clear the per-symbol cache so the next render re-fetches.")
     st.divider()
-    st.caption(dashboard_version())
     s = stats()
     st.caption(f"Cache: {s['rows']} rows, oldest { _fmt_ts(s['oldest']) }, newest { _fmt_ts(s['newest']) }")
     st.caption("Source: Finnhub free tier (60 req/min)")

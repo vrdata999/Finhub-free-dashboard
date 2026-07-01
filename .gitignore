@@ -17,6 +17,9 @@ env/
 # Dashboard SQLite cache
 dashboard/.cache/
 
+# JSON dumps from `finnhub_free.py --json` (~9 MB, embed a key fragment)
+finnhub_*.json
+
 # Claude Code local settings (per-machine, not shared)
 .claude/settings.local.json
 dashboard/.claude/settings.local.json

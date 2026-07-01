@@ -93,10 +93,10 @@ def get(path, **params):
     return r.json()
 ```
 
-## Free-tier endpoint catalog (24 of 114)
+## Free-tier endpoint catalog (27 of 114)
 
 Every endpoint below returned 200 + non-empty data on 2026-06-24 against the key
-in `.env`. The remaining 85 endpoints in the Swagger spec are paid-tier and
+in `.env`. The remaining 87 endpoints in the Swagger spec are paid-tier and
 return HTTP 403 (`You don't have access to this resource`).
 
 ### Core stock data
@@ -227,7 +227,7 @@ JSON envelope:
 
 ```json
 {
-  "key": "d8t9of...tfd0",
+  "key": "abc123...wxyz",
   "fetched_at": "2026-06-24T17:54:36+00:00",
   "endpoints": {
     "GET /quote":                    {"ok": true, "data": {...}},

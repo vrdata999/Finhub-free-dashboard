@@ -29,7 +29,7 @@ load_dotenv(dotenv_path=os.path.join(_PROJECT_ROOT, ".env"))
 API_KEY = os.getenv("OPENROUTER_API_KEY", "").strip()
 # Default to a :free model so the dashboard works on a $0 OpenRouter account.
 # Paid models (e.g. anthropic/claude-sonnet-4.6) 402 on a free tier.
-DEFAULT_MODEL = "meta-llama/llama-3.3-70b-instruct:free"
+DEFAULT_MODEL = "google/gemma-4-31b-it:free"
 MODEL = os.getenv("OPENROUTER_MODEL", DEFAULT_MODEL).strip() or DEFAULT_MODEL
 
 BASE = "https://openrouter.ai/api/v1/chat/completions"
@@ -91,9 +91,9 @@ def last_error() -> str | None:
 # configured model first, then fall back through alternates so a single
 # analysis succeeds even when the primary is overloaded.
 _FALLBACK_MODELS = [
-    "nvidia/nemotron-3-super-120b-a12b:free",
     "openai/gpt-oss-120b:free",
-    "qwen/qwen3-next-80b-a3b-instruct:free",
+    "nvidia/nemotron-3-ultra-550b-a55b:free",
+    "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
 ]
 
 
