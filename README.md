@@ -56,12 +56,25 @@ A local Streamlit research dashboard built entirely on the **Finnhub free tier**
 ### 1. Clone & install
 
 ```bash
-git clone https://github.com/The-Options-Guru/finhub-data.git
-cd finhub-data
+git clone https://github.com/The-Options-Guru/finnhub-free-dashboard.git
+cd finnhub-free-dashboard
 pip install -r dashboard/requirements.txt
 ```
 
-### 2. Add your API key
+### 2. Get your API keys
+
+**Finnhub (required — free):**
+1. Sign up at <https://finnhub.io/register> (email only, no credit card)
+2. Your API key is shown immediately on the dashboard at <https://finnhub.io/dashboard>
+
+**OpenRouter (optional — only for the AI Analysis tab, also free):**
+1. Sign up at <https://openrouter.ai> (Google/GitHub login works)
+2. Create a key at <https://openrouter.ai/keys>
+3. No credit needed — the dashboard uses `:free` models that work on a $0 account
+
+If you skip the OpenRouter key, the AI Analysis tab is disabled and everything else works normally.
+
+### 3. Add the keys to `.env`
 
 Create a `.env` file in the repo root (copy from `.env.example`):
 
@@ -73,9 +86,7 @@ OPENROUTER_API_KEY=your_openrouter_key_here
 OPENROUTER_MODEL=meta-llama/llama-3.3-70b-instruct:free
 ```
 
-Get a free Finnhub key at <https://finnhub.io>.
-
-### 3. Run the dashboard
+### 4. Run the dashboard
 
 ```bash
 cd dashboard
@@ -89,7 +100,7 @@ Browser opens at <http://localhost:8501>. Type any US ticker in the sidebar and 
 ## Project Layout
 
 ```
-finhub-data/
+finnhub-free-dashboard/
 ├── .env.example              # Key template (real key is gitignored)
 ├── finnhub_free.py           # CLI script — exercises all 27 free endpoints
 ├── probe_endpoints.py        # Auto-probes the full Swagger spec (114 endpoints)
