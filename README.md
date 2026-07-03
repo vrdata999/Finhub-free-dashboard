@@ -88,6 +88,17 @@ OPENROUTER_MODEL=meta-llama/llama-3.3-70b-instruct:free
 
 ### 4. Run the dashboard
 
+**Windows — double-click, no terminal needed:**
+
+| Script | What it does |
+|---|---|
+| `dashboard\install.bat` | Upgrades pip and installs all requirements — run once |
+| `dashboard\run.bat` | Launches the dashboard at http://localhost:8501 |
+| `dashboard\run.bat 8765` | Same on a custom port |
+| `dashboard\clean-cache.bat` | Deletes the SQLite cache so the next run re-fetches everything |
+
+**Other platforms / manual:**
+
 ```bash
 cd dashboard
 streamlit run app.py
@@ -111,6 +122,9 @@ finnhub-free-dashboard/
     ├── cache.py              # SQLite TTL cache at .cache/finnhub.db
     ├── ai_client.py          # OpenRouter LLM integration
     ├── requirements.txt      # streamlit, requests, plotly
+    ├── install.bat           # Windows: install dependencies (run once)
+    ├── run.bat               # Windows: launch dashboard (optional custom port)
+    ├── clean-cache.bat       # Windows: delete the SQLite cache
     └── .streamlit/
         └── config.toml       # Dark theme + server config
 ```
